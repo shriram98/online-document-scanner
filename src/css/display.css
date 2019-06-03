@@ -1,0 +1,22 @@
+.edit-buttons--container {
+    width: 1vw;
+    height:80vh;
+    margin-left: 4vw;
+    float: left;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.display-image {
+    float: right;
+    margin-right: 10vw;
+    margin-top: 7vh;
+}
+
+.edit-button {
+    width: 100px;
+    height: 50px;
+
+}

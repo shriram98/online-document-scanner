@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=ZCOOL+KuaiLe&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Arvo&display=swap');
+
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    background-color: rgb(228, 233, 237);
+    height:100%;
+}
+
+.upload-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.upload-lbl{
+    padding: 19px;
+    background: red; 
+    display: table;
+    color: #fff;
+    cursor: pointer;
+    font-size: 25px;
+    font-family: 'ZCOOL KuaiLe', cursive;
+}
+
+
+.upload-lbl input[type="file"] {
+    display: none;
+}
+
+.upload-progress {
+    font-family: 'Arvo', serif;
+    margin-top: 10vh;
+    font-size: 20px;
+}
+
+.status-color {
+    color: green;
+    margin-right: 10px;
+}
+
+.display-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    position: absolute;
+    z-index: 100;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.close-btn {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 20px;
+    right: 1vw;
+    color: red;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
