@@ -13,7 +13,7 @@ export default class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            preview : true,
+            preview : false,
             uploading: false,
             images:[],
             progress : 'not uploaded'
@@ -29,7 +29,7 @@ export default class App extends React.Component {
     }
     
     closeDisplay(e) {
-        this.setState({uploading: false});
+        this.setState({preview: false});
     }
 
     uploadImage(e) {
@@ -37,37 +37,37 @@ export default class App extends React.Component {
         this.setState({ uploading: true })
         console.log('fn called')
 
-        // const formData = new FormData()
+        const formData = new FormData()
 
-        // files.forEach((file, i) => {
-        //     formData.append(i, file)
-        // })
+        files.forEach((file, i) => {
+            formData.append(i, file)
+        })
 
-        // this.setState({
-        //     progress: 'uploading please wait ..'
-        // })
+        this.setState({
+            progress: 'uploading please wait ..'
+        })
 
-        // fetch(`http://localhost:1234/image-upload`, {
-        // method: 'POST',
-        // body: formData
-        // })
-        // .then(res => res.json())
-        // .then(images => {
-        //     this.setState({ 
-        //         uploading: false,
-        //         images,
-        //         preview: true,
-        //         progress: 'image recieved'
-        //     })
-        //     console.log(images)
-        // })
+        fetch(`http://localhost:1234/image-upload`, {
+        method: 'POST',
+        body: formData
+        })
+        .then(res => res.json())
+        .then(images => {
+            this.setState({ 
+                uploading: false,
+                images,
+                preview: true,
+                progress: 'image recieved'
+            })
+            console.log(images)
+        })
     }
 
     render() {
 
         var display;
 
-        if(this.state.uploading) {
+        if(this.state.preview) {
             display = <div id="display" className="display-container">
                         <button className="close-btn" onClick ={this.closeDisplay}>&#x274C;</button>
                         <Display url={this.state.images}/>

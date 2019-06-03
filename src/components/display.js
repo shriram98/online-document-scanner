@@ -81,7 +81,7 @@ export default class Display extends React.Component {
                 {/* <img src={url[0].url} className="display-image" /> */}
                 <div id="disp" className="display-image">
                     <Annotation
-                        src={url[0].url}
+                        src={url.url}
                         annotations={this.state.annotations}
                         type={this.state.type}
                         value={this.state.annotation}
